@@ -1,1 +1,1 @@
-# new-relic-programmability
+# nru-programmability-course
