@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableChart } from 'nr1';
+import { HeadingText, TableChart } from 'nr1';
 
 export default class PastTests extends React.Component {
     render() {
@@ -25,6 +25,11 @@ export default class PastTests extends React.Component {
             ],
         }
 
-        return <TableChart data={[historicalData]} fullWidth />
+        return <div>
+            <HeadingText className="chartHeader">
+                Past tests
+            </HeadingText>
+            <TableChart data={[historicalData]} fullWidth />
+        </div>
     }
 }

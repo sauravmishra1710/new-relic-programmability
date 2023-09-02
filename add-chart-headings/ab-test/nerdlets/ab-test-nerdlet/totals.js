@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableChart } from 'nr1';
+import { HeadingText, TableChart } from 'nr1';
 
 export default class VersionTotals extends React.Component {
     constructor(props) {
@@ -7,7 +7,7 @@ export default class VersionTotals extends React.Component {
     }
 
     render() {
-        const versionTotals = {
+        const versionATotals = {
             metadata: {
                 id: `totals-${this.props.version}`,
                 name: `Version ${this.props.version}`,
@@ -24,6 +24,11 @@ export default class VersionTotals extends React.Component {
                 },
             ],
         }
-        return <TableChart data={[versionTotals]} fullWidth />
+        return <div>
+            <HeadingText className="chartHeader">
+                Version {this.props.version.toUpperCase()} - Page views vs. subscriptions
+            </HeadingText>
+            <TableChart data={[versionATotals]} fullWidth />
+        </div>
     }
 }

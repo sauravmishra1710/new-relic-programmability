@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart } from 'nr1';
+import { HeadingText, LineChart } from 'nr1';
 
 export default class NewsletterSignups extends React.Component {
     render() {
@@ -35,6 +35,11 @@ export default class NewsletterSignups extends React.Component {
                 { x: 50, y: 35 },
             ],
         }
-        return <LineChart data={[versionASignups, versionBSignups]} fullWidth />
+        return <div>
+            <HeadingText className="chartHeader">
+                Newsletter subscriptions per version
+            </HeadingText>
+            <LineChart data={[versionASignups, versionBSignups]} fullWidth />
+        </div>
     }
 }
