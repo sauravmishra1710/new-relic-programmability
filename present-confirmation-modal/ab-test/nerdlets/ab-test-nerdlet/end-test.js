@@ -1,9 +1,11 @@
 import React from 'react';
 import {
+    BlockText,
     Button,
     Grid,
     GridItem,
     HeadingText,
+    Modal,
     Select,
     SelectItem,
 } from 'nr1';
@@ -24,7 +26,21 @@ class VersionSelector extends React.Component {
 class EndTestButton extends React.Component {
     render() {
         return <div>
-            <Button>End test</Button>
+            <Button type={Button.TYPE.DESTRUCTIVE}>End test</Button>
+
+            <Modal>
+                <HeadingText>Are you sure?</HeadingText>
+                <BlockText>
+                    If you end the test, all your users will receive the version you selected:
+                </BlockText>
+
+                <BlockText spacingType={[BlockText.SPACING_TYPE.LARGE]}>
+                    <b>Version A</b>
+                </BlockText>
+
+                <Button>No, continue test</Button>
+                <Button type={Button.TYPE.DESTRUCTIVE}>Yes, end test</Button>
+            </Modal>
         </div>
     }
 }
