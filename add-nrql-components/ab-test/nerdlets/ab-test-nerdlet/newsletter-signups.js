@@ -5,7 +5,7 @@ import {
     NrqlQuery,
 } from 'nr1';
 
-const ACCOUNT_ID = 1005083751;  // <YOUR NEW RELIC ACCOUNT ID>
+const ACCOUNT_ID = 123456  // <YOUR NEW RELIC ACCOUNT ID>
 
 export default class NewsletterSignups extends React.Component {
     render() {
@@ -16,6 +16,7 @@ export default class NewsletterSignups extends React.Component {
             <NrqlQuery
                 accountIds={[ACCOUNT_ID]}
                 query="SELECT count(*) FROM subscription FACET page_version SINCE 30 MINUTES AGO TIMESERIES"
+                pollInterval={60000}
             >
                 {
                     ({ data }) => {
